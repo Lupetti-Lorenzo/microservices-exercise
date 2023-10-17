@@ -1,8 +1,14 @@
 from fastapi import FastAPI, status, HTTPException
 from pydantic import BaseModel
 from kubernetes import client, config
+import os
 
+# print(os.getenv("SECRET_KEY"))
+
+# FASTAPI
 app = FastAPI()
+
+# K8 CONFIG
 config.load_kube_config()
 v1 = client.CoreV1Api()
 
