@@ -2,21 +2,34 @@
 
 ## gang  
 
-# How to start
+# How to start 
 
-## Install virtual enviroment
+## Without virtual env
+```bash
+pip install -r requirements.txt
+```
+
+## With virtual enviroment
+
+### Install pipenv
 ```bash
 pip install pipenv
 ```
 
-## Enter virtual enviroment
+### Enter virtual enviroment
 ```bash
 pipenv shell
 ```
 
-## Install dependencies 
+### Install dependencies from Pipfile
 ```bash
-pip install -r requirements.txt
+pipenv install
+```
+
+### Add new packages 
+```bash
+pipenv install [package] # install the package
+pip freeze > requirements.txt # update requirements
 ```
 
 ## Run the application
@@ -24,13 +37,12 @@ pip install -r requirements.txt
 uvicorn main:app --reload --port 8000
 ```
 
-## Added new dependency?
-```bash
-pip freeze > requirements.txt # and push the file to the repo
-```
-
 ## Enviroment variables?
+
 Create a .env file with key values like this: SECRET_KEY="HELLO NIBBA"
+
 Pipenv will automatically detect it.
+
 Get the variable: os.getenv("SECRET_KEY")
+
 We will manually send the .env to each other for security. 
