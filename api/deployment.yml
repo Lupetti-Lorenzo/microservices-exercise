@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: fastapi
-          image: try:latest
+          image: api:latest
           imagePullPolicy: Never
           ports:
             - containerPort: 80
@@ -25,7 +25,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: apiserversvc
+  name: api-service
   labels:
     app: fastapi
 spec:
