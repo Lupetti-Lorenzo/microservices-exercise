@@ -1,7 +1,7 @@
 import sys
 from fastapi import FastAPI, status, HTTPException
 from pydantic import BaseModel
-# from kubernetes import client, config
+from kubernetes import client, config
 import os
 
 # print(os.getenv("SECRET_KEY"))

@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: apiserver
+  name: fastapi
   labels:
     app: fastapi
 spec:
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: fastapi
-          image: prova:latest
+          image: try:latest
           imagePullPolicy: Never
           ports:
             - containerPort: 80
@@ -25,11 +25,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: apiserver-service
+  name: apiserversvc
   labels:
     app: fastapi
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
     - port: 80
       targetPort: 80
