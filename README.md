@@ -11,6 +11,7 @@ pip install pipenv
 
 ### Enter virtual enviroment
 ```bash
+cd api
 pipenv shell
 ```
 

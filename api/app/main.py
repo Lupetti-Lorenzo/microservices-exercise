@@ -3,6 +3,7 @@ from fastapi import FastAPI, status, HTTPException
 from pydantic import BaseModel
 from kubernetes import client, config
 import os
+import random
 
 # print(os.getenv("SECRET_KEY"))
 
@@ -58,12 +59,11 @@ async def get_pods() -> list[str]:
 
 
 @app.get("/podid")
-async def get_pods() -> list[str]:
-  # Get the pod details
-    pod = v1.read_namespaced_pod(name="fastapi", namespace="default")
+async def get_current_pod_id() -> str:
+	# python or between env or unknown  
+  return (os.getenv("HOSTNAME") or "unknown")
+	 
 
-    # Get the pod's UID (ID)
-    pod_id = pod.metadata.uid
 
 
 @app.get("/error")
