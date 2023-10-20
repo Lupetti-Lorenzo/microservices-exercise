@@ -19,14 +19,14 @@ pipenv shell
 pipenv install
 ```
 
-### Add new packages 
+## Add new packages 
 ```bash
 pipenv install [package] # install the package
 ```
 
 ## Run the application
 ```bash
-uvicorn main:app --reload --port 8000
+uvicorn app.main:app --reload --port 8000
 ```
 
 ## Enviroment variables?
