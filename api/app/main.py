@@ -89,7 +89,7 @@ async def get_pods_logs(request: Request) -> dict[str,str]:
             pods_logs[name] = logs
     return pods_logs
 	
-@app.get("/pod/clusterid")
+@app.get("/clusterid")
 async def get_current_pod_id() -> str:
   return (os.getenv("HOSTNAME") or "unknown") 
 
