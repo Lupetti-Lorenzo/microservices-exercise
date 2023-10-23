@@ -51,10 +51,20 @@ spec:
       serviceAccountName: fastapi-service-account
       containers:
         - name: fastapi
-          image: api2:latest
+          image: api:latest
           imagePullPolicy: Never
           ports:
             - containerPort: 80
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 80
+            initialDelaySeconds: 15
+            periodSeconds: 5
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
 
 ---
 apiVersion: v1
