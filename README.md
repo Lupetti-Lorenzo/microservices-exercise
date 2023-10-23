@@ -48,10 +48,9 @@ We will manually send the .env to each other for security.
 docker build --no-cache -t api:latest .
 ```
 
-### Add the image to minikube cache
+### Add the image to minikube images
 ```bash
-minikube cache add api:latest
-# minikube cache reload - for refreshing the cache
+minikube image load api:latest # default overwrites the previous image
 ```
 
 ### Deploy
