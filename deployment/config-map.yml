@@ -4,4 +4,4 @@ metadata:
   name: internal-ips
 data:
   API_IP: "10.96.0.100"
-  api-port: "80"
+  API_PORT: "80"
