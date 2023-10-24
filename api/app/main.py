@@ -6,11 +6,14 @@ from kubernetes import client, config
 import os
 import re
 import random
+import pika # RabbitMQ
 
 # print(os.getenv("SECRET_KEY"))
 ## ----------------- SETUP ----------------- ##
 # FASTAPI
 app = FastAPI()
+
+
 
 # K8 CONFIG
 try:
@@ -102,6 +105,24 @@ async def health_check() -> str:
 @app.get("/badHealth")
 async def throw_error():
     raise HTTPException(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, detail="Service unavailable")
+
+
+
+# RABBITMQ 
+ 
+# Connect to RabbitMQ ClusterIP service
+connection = pika.BlockingConnection(pika.ConnectionParameters('rabbit-mq'))
+channel = connection.channel()
+
+# Create queue
+channel.queue_declare(queue='hello')
+# Send message to queue
+channel.basic_publish(exchange='',
+                      routing_key='hello',
+                      body='Hello World!')
+
+connection.close()
+
 
 
 # OTHER

@@ -39,7 +39,7 @@ metadata:
   labels:
     app: fastapi
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: fastapi
@@ -79,22 +79,5 @@ spec:
     - port: 80
       targetPort: 80
       protocol: TCP
-  selector:
-    app: fastapi
----
-# Version for in-cluster communication
-apiVersion: v1
-kind: Service
-metadata:
-  name: api-service-cluster
-  labels:
-    app: fastapi
-spec:
-  type: ClusterIP
-  ports:
-    - port: 80
-      targetPort: 80
-      protocol: TCP
-  clusterIP: 10.96.0.100
   selector:
     app: fastapi
