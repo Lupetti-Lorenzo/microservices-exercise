@@ -15,6 +15,7 @@ app = FastAPI()
 
 
 
+
 # K8 CONFIG
 try:
     config.load_kube_config()
@@ -109,19 +110,23 @@ async def throw_error():
 
 
 # RABBITMQ 
- 
-# Connect to RabbitMQ ClusterIP service
-connection = pika.BlockingConnection(pika.ConnectionParameters('rabbit-mq'))
-channel = connection.channel()
+@app.put("/message")
+async def add_message(request: Request) -> str:
+    # Connect to RabbitMQ ClusterIP service
+    connection = pika.BlockingConnection(pika.ConnectionParameters('rabbit-mq'))
+    channel = connection.channel()
+	# Create queue
+    channel.queue_declare(queue='hello')
+    # Send message to queue
+    channel.basic_publish(exchange='',
+                        routing_key='hello',
+                        body=request.query_params.get("message") or "Hello World!")
 
-# Create queue
-channel.queue_declare(queue='hello')
-# Send message to queue
-channel.basic_publish(exchange='',
-                      routing_key='hello',
-                      body='Hello World!')
+    connection.close()
+    return request.query_params.get("message") or "Hello World!"
 
-connection.close()
+
+
 
 
 

@@ -2,15 +2,24 @@
 
 # API
 
-## How to start 
+## How to start
 
-### Install pipenv
+### Install dependencies
 
 ```bash
-pip install pipenv
+pip install -r requirements.txt
 ```
 
-### Enter virtual enviroment
+### Add new package
+
+```bash
+pip install package_name
+pip freeze > requirements.txt
+```
+
+## How to start - pipenv
+
+### Create virtual enviroment
 
 ```bash
 cd api
@@ -20,13 +29,14 @@ pipenv shell
 ### Install dependencies from Pipfile
 
 ```bash
-pipenv install
+pipenv install -r requirements.txt
 ```
 
-## Add new packages 
+### Add new packages 
 
 ```bash
 pipenv install package_name
+pip freeze > requirements.txt
 ```
 
 ## Run the application
@@ -103,7 +113,7 @@ kubectl apply -f deployment/
 
 ### Testing
 
-Right now you cannot access the services inside the cluster, use minikube service to create a port-forward and get access to the front end via localhost.
+Right now you cannot access the services inside the cluster, use **minikube service** to create a port-forward and get access to the front end via localhost.
 
 ```bash
 minikube service frontend-service

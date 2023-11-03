@@ -7,7 +7,7 @@
 	// store for the messages
 	import { writable } from "svelte/store";
 
-	const messages = writable(["ciao"]);
+	const messages = writable([]);
 
 	const reciveMessage = async () => {
 		try {
@@ -22,8 +22,24 @@
 		} catch (error) {
 			// Handle network or other errors
 		}
-		console.log(JSON.stringify($messages));
 	};
+
+	const putMessage = async () => {
+		try {
+			const response = await fetch("/api/putMessage"); // Replace with your API endpoint
+			if (response.ok) {
+				// Handle the successful response here
+				console.log("Message successfully added");
+				addedMessage = true;
+			} else {
+				// Handle errors
+			}
+		} catch (error) {
+			// Handle network or other errors
+		}
+	};
+
+	let addedMessage = false;
 </script>
 
 <h1>Welcome to SvelteKit</h1>
@@ -33,6 +49,8 @@ Message from api-server: {hello} <br />
 pod name: {hostname}
 <br /> <br />
 <button on:click={reciveMessage}>QueueMessage</button>
+<button on:click={putMessage}>PutMessage</button>
+<span>{addedMessage ? "Message successfully added" : ""}</span>
 
 {#each $messages as msg}
 	<p>{msg}</p>
