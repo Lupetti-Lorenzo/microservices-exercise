@@ -1,4 +1,37 @@
-# repow
+<div align="center">
+  <!-- <img src="static/logo512x512.png" alt="Your Project Logo" width="160"> -->
+  <h1>Microservices k8s exercise</h1>
+  <p> </p>
+</div>
+<br>
+
+## 🚀 Features
+
+- Simple WebApplication in SvelteKit that communicates with the api
+- API in pyton FastApi with routes that interacts with the cluster and the queue
+- RabbitMQ queue deployed via kubectl
+- Docker files for building the apps
+- deployment folder with all the necessary to deploy the applications images and allow communication between them
+- All tested in my PC using tools like ***docker*** for building, ***minikube*** for testing, ***kubectl*** to deploy resources and ***k9s*** for monitoring and interacting with the cluster.
+
+## 💻 Tech & Stuff used for this project 
+
+![Docker](https://img.shields.io/badge/Docker-%232496ED.svg?style=for-the-badge&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-%23326CE5.svg?style=for-the-badge&logo=kubernetes&logoColor=white)
+![Minikube](https://img.shields.io/badge/Minikube-%230081CB.svg?style=for-the-badge&logo=minikube&logoColor=white)
+![YAML](https://img.shields.io/badge/YAML-%23000000.svg?style=for-the-badge&logo=yaml&logoColor=white)
+![RabbitMQ](https://img.shields.io/badge/RabbitMQ-%23FF6600.svg?style=for-the-badge&logo=rabbitmq&logoColor=white)
+
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![Svelte Kit](https://img.shields.io/badge/Svelte%20Kit-%23FF3E00.svg?style=for-the-badge&logo=svelte&logoColor=white)
+![npm](https://img.shields.io/badge/npm-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white)
+
+![Python](https://img.shields.io/badge/Python-%233776AB.svg?style=for-the-badge&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-%23007ACC.svg?style=for-the-badge&logo=fastapi&logoColor=white)
+![OpenAPI](https://img.shields.io/badge/OpenAPI-%2361DAFB.svg?style=for-the-badge&logo=openapi-initiative&logoColor=white)
+
+![UML](https://img.shields.io/badge/UML-%23000000.svg?style=for-the-badge&logo=uml&logoColor=white)
+
 
 # API
 
