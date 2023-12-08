@@ -1,24 +1,25 @@
 <div align="center">
-  <!-- <img src="static/logo512x512.png" alt="Your Project Logo" width="160"> -->
-  <h1>Microservices k8s exercise</h1>
-  <p> </p>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg" alt="Kubernetes Logo" width="160">
+  <h1>Microservices Exercise</h1>
+	<p></p>
 </div>
 <br>
 
 ## 🚀 Features
 
-- Simple WebApplication in SvelteKit that communicates with the api
-- API in pyton FastApi with routes that interacts with the cluster and the queue
-- RabbitMQ queue deployed via kubectl
-- Docker files for building the apps
-- deployment folder with all the necessary to deploy the applications images and allow communication between them
-- All tested in my PC using tools like ***docker*** for building, ***minikube*** for testing, ***kubectl*** to deploy resources and ***k9s*** for monitoring and interacting with the cluster.
+- ***WebApplication*** in SvelteKit
+- ***REST API*** in pyton FastApi
+- ***RabbitMQ*** broker deployed via kubectl
+- ***Dockerfile*** files for building the apps
+- ***deployment*** folder with all the necessary to deploy the applications in a ***kubernetes*** cluster and allow communication between them
+- All tested in my PC using tools like ***docker*** for building, ***minikube*** for local deployment and ***k9s*** for monitoring and interacting with the cluster.
+- ***UML*** diagrams to illustrate the system's structure
+
 
 ## 💻 Tech & Stuff used for this project 
 
 ![Docker](https://img.shields.io/badge/Docker-%232496ED.svg?style=for-the-badge&logo=docker&logoColor=white)
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-%23326CE5.svg?style=for-the-badge&logo=kubernetes&logoColor=white)
-![Minikube](https://img.shields.io/badge/Minikube-%230081CB.svg?style=for-the-badge&logo=minikube&logoColor=white)
 ![YAML](https://img.shields.io/badge/YAML-%23000000.svg?style=for-the-badge&logo=yaml&logoColor=white)
 ![RabbitMQ](https://img.shields.io/badge/RabbitMQ-%23FF6600.svg?style=for-the-badge&logo=rabbitmq&logoColor=white)
 
@@ -171,6 +172,6 @@ This view shows how each service communicates with each other.
 
 ![](static/PublishMessage.png)
 
-### Request a message to the broker
+### Request a message from the broker
 
 ![](static/GetMessage.png)
